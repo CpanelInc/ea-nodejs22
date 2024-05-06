@@ -1,0 +1,8 @@
+#!/bin/bash
+
+set -x
+
+if [ -e "/usr/bin/apt" ]; then
+   # changes symlink targets so will get the symlinks to ../…/*.js
+   chmod 755 /opt/cpanel/ea-nodejs22/bin/*
+fi
