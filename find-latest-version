@@ -5,7 +5,7 @@
 # This code is subject to the cPanel license. Unauthorized copying is prohibited
 #
 # This provides incremental updates to existing packages in EasyApache4.
-package ea_nginx::find_latest_version;
+package ea_nodejs22::find_latest_version;
 
 use strict;
 use warnings;
