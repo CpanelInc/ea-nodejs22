@@ -1,7 +1,7 @@
 Name:    ea-nodejs22
 Vendor:  cPanel, Inc.
 Summary: Node.js 22
-Version: 22.3.0
+Version: 22.4.1
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4572 for more details
 %define release_prefix 1
 Release: %{release_prefix}%{?dist}.cpanel
@@ -69,6 +69,14 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 
 
 %changelog
+* Tue Jul 09 2024 Cory McIntire <cory@cpanel.net> - 22.4.1-1
+- EA-12265: Update ea-nodejs22 from v22.3.0 to v22.4.1
+	- CVE-2024-36138 - Bypass incomplete fix of CVE-2024-27980 (High)
+	- CVE-2024-22020 - Bypass network import restriction via data URL (Medium)
+	- CVE-2024-22018 - fs.lstat bypasses permission model (Low)
+ 	- CVE-2024-36137 - fs.fchown/fchmod bypasses permission model (Low)
+	- CVE-2024-37372 - Permission model improperly processes UNC paths (Low)
+
 * Mon Jul 01 2024 Cory McIntire <cory@cpanel.net> - 22.3.0-1
 - EA-12241: Update ea-nodejs22 from v22.2.0 to v22.3.0
 
