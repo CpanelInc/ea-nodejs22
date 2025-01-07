@@ -1,7 +1,7 @@
 Name:    ea-nodejs22
 Vendor:  cPanel, Inc.
 Summary: Node.js 22
-Version: 22.12.0
+Version: 22.13.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4572 for more details
 %define release_prefix 1
 Release: %{release_prefix}%{?dist}.cpanel
@@ -69,6 +69,9 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 
 
 %changelog
+* Tue Jan 07 2025 Cory McIntire <cory@cpanel.net> - 22.13.0-1
+- EA-12635: Update ea-nodejs22 from v22.12.0 to v22.13.0
+
 * Tue Dec 03 2024 Cory McIntire <cory@cpanel.net> - 22.12.0-1
 - EA-12599: Update ea-nodejs22 from v22.11.0 to v22.12.0
 
