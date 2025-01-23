@@ -71,6 +71,9 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 %changelog
 * Tue Jan 21 2025 Cory McIntire <cory@cpanel.net> - 22.13.1-1
 - EA-12664: Update ea-nodejs22 from v22.13.0 to v22.13.1
+	- Worker permission bypass via InternalWorker leak in diagnostics (CVE-2025-23083) - (high)
+	- GOAWAY HTTP/2 frames cause memory leak outside heap (CVE-2025-23085) - (medium)
+	- Path traversal by drive name in Windows environment (CVE-2025-23084) - (medium)
 
 * Tue Jan 07 2025 Cory McIntire <cory@cpanel.net> - 22.13.0-1
 - EA-12635: Update ea-nodejs22 from v22.12.0 to v22.13.0
