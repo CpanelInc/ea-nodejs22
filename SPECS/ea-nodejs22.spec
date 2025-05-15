@@ -1,7 +1,7 @@
 Name:    ea-nodejs22
 Vendor:  cPanel, Inc.
 Summary: Node.js 22
-Version: 22.15.0
+Version: 22.15.1
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4572 for more details
 %define release_prefix 1
 Release: %{release_prefix}%{?dist}.cpanel
@@ -69,6 +69,11 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 
 
 %changelog
+* Wed May 14 2025 Cory McIntire <cory.mcintire@webpros.com> - 22.15.1-1
+- EA-12867: Update ea-nodejs22 from v22.15.0 to v22.15.1
+    - Improper error handling in async cryptographic operations crashes process (CVE-2025-23166) - (high)
+    - Corrupted pointer in node::fs::ReadFileUtf8(const FunctionCallbackInfo<Value>& args) when args[0] is a string. (CVE-2025-23165) - (low)
+
 * Thu Apr 24 2025 Cory McIntire <cory.mcintire@webpros.com> - 22.15.0-1
 - EA-12832: Update ea-nodejs22 from v22.14.0 to v22.15.0
 
