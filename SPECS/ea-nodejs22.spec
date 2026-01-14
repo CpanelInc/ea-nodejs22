@@ -71,6 +71,8 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 %changelog
 * Tue Jan 13 2026 Cory McIntire <cory.mcintire@webpros.com> - 22.22.0-1
 - EA-13315: Update ea-nodejs22 from v22.21.1 to v22.22.0
+- CVE-2025-55132 - HTTP Request Smuggling vulnerability in permission model
+- CVE-2025-59465 - TLSSocket default error handler vulnerability
 
 * Wed Oct 29 2025 Cory McIntire <cory.mcintire@webpros.com> - 22.21.1-1
 - EA-13245: Update ea-nodejs22 from v22.21.0 to v22.21.1
