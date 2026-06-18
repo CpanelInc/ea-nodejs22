@@ -3,7 +3,7 @@ Vendor:  cPanel, Inc.
 Summary: Node.js 22
 Version: 22.23.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4572 for more details
-%define release_prefix 1
+%define release_prefix 2
 Release: %{release_prefix}%{?dist}.cpanel
 License: MIT
 Group:   Development/Languages
@@ -69,6 +69,20 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 
 
 %changelog
+* Thu Jun 18 2026 Cory McIntire <cory.mcintire@webpros.com> - 22.23.0-2
+- EA-13467: Add CVE documentation for Node.js 22.23.0
+- CVE-2026-48618: TLS hostname not normalized for server identity checks - wildcard certificate auth bypass (High)
+- CVE-2026-48933: WebCrypto cipher output length not guarded - AES integer overflow crash (High)
+- CVE-2026-48937: HTTP/2 sessions not cleaned up after GOAWAY on invalid protocol errors (Medium)
+- CVE-2026-48930: dns/net hostnames with embedded NUL bytes accepted - silent authority rebinding (Medium)
+- CVE-2026-48619: HTTP/2 originSet size uncapped - unbounded memory growth via ORIGIN frames (Medium)
+- CVE-2026-48615: HTTP proxy credentials leaked in ERR_PROXY_TUNNEL error messages (Medium)
+- CVE-2026-48934: TLS reusable sessions not bound to authenticated host - identity verification bypass (Medium)
+- CVE-2026-48928: TLS case-sensitive SNI context matching bypass in mTLS (Medium)
+- CVE-2026-48617: Permission model process.report.writeReport() path misvalidation bypass (Low)
+- CVE-2026-48931: HTTP response queue poisoning in http.Agent via TOCTOU race (Low)
+- CVE-2026-48935: Permission model FileHandle.utimes() read-only file restriction bypass (Low)
+
 * Thu Jun 18 2026 EA4 Update Bot <cory.mcintire@webpros.com> - 22.23.0-1
 - EA-13467: Update ea-nodejs22 from v22.22.3 to v22.23.0
 
