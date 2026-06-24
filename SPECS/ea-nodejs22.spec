@@ -1,9 +1,9 @@
 Name:    ea-nodejs22
 Vendor:  cPanel, Inc.
 Summary: Node.js 22
-Version: 22.23.0
+Version: 22.23.1
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4572 for more details
-%define release_prefix 2
+%define release_prefix 1
 Release: %{release_prefix}%{?dist}.cpanel
 License: MIT
 Group:   Development/Languages
@@ -69,6 +69,9 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 
 
 %changelog
+* Wed Jun 24 2026 EA4 Update Bot <cory.mcintire@webpros.com> - 22.23.1-1
+- EA-13473: Update ea-nodejs22 from v22.23.0 to v22.23.1
+
 * Thu Jun 18 2026 Cory McIntire <cory.mcintire@webpros.com> - 22.23.0-2
 - EA-13467: Add CVE documentation for Node.js 22.23.0
 - CVE-2026-48618: TLS hostname not normalized for server identity checks - wildcard certificate auth bypass (High)
