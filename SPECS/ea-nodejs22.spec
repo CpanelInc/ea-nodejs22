@@ -1,7 +1,7 @@
 Name:    ea-nodejs22
 Vendor:  cPanel, Inc.
 Summary: Node.js 22
-Version: 22.23.1
+Version: 22.23.2
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4572 for more details
 %define release_prefix 1
 Release: %{release_prefix}%{?dist}.cpanel
@@ -69,6 +69,19 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 
 
 %changelog
+* Thu Jul 30 2026 EA4 Update Bot <cory.mcintire@webpros.com> - 22.23.2-1
+- EA-13518: Update ea-nodejs22 from v22.23.1 to v22.23.2
+- CVE-2026-56846: http2 - retain header memory in session accounting (High)
+- CVE-2026-56848: http2 - defer rst stream while in scope (High)
+- CVE-2026-58043: permission - avoid granting radix split nodes (High)
+- CVE-2026-56850: https - distinguish PFX object-array agent keys (Medium)
+- CVE-2026-58040: https - bind identity checks to session reuse (Medium)
+- CVE-2026-58042: dns - handle large resolveAny address replies (Medium)
+- CVE-2026-58045: zlib - throw on out-of-bounds write buffers (Medium)
+- CVE-2026-56847: permission - enforce fs write permission for trace events (Low)
+- CVE-2026-58039: permission - check final report output path (Low)
+- CVE-2026-58044: http - reject requests exceeding max header count (Low)
+
 * Wed Jun 24 2026 EA4 Update Bot <cory.mcintire@webpros.com> - 22.23.1-1
 - EA-13473: Update ea-nodejs22 from v22.23.0 to v22.23.1
 
