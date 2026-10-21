@@ -71,6 +71,13 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 %changelog
 * Wed Oct 21 2026 EA4 Update Bot <cory.mcintire@webpros.com> - 22.23.4-1
 - EA-13614: Update ea-nodejs22 from v22.23.3 to v22.23.4
+- CVE-2026-111497: deps - brotli decoder out-of-bounds write permits remote code execution (High)
+- CVE-2026-105482: dns - validate resolve inputs for null bytes (High)
+- CVE-2026-106069: tls - reject non-canonical IP addresses (High)
+- CVE-2026-106072: tls - reject non-canonical IP addresses (Medium)
+- CVE-2026-105481: http - ensure agent data guard works without I/O (Medium)
+- CVE-2026-106074: crypto - reset random caches across snapshots (Medium)
+- CVE-2026-106073: permission - check permission model in realpathSync (Low)
 
 * Thu Sep 24 2026 EA4 Update Bot <cory.mcintire@webpros.com> - 22.23.3-1
 - EA-13564: Update ea-nodejs22 from v22.23.2 to v22.23.3
