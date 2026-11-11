@@ -1,7 +1,7 @@
 Name:    ea-nodejs22
 Vendor:  cPanel, Inc.
 Summary: Node.js 22
-Version: 22.23.4
+Version: 22.23.5
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4572 for more details
 %define release_prefix 1
 Release: %{release_prefix}%{?dist}.cpanel
@@ -69,6 +69,9 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 
 
 %changelog
+* Wed Nov 11 2026 Cory McIntire <cory.mcintire@webpros.com> - 22.23.5-1
+- EA-13649: Update ea-nodejs22 from v22.23.4 to v22.23.5
+
 * Wed Oct 21 2026 EA4 Update Bot <cory.mcintire@webpros.com> - 22.23.4-1
 - EA-13614: Update ea-nodejs22 from v22.23.3 to v22.23.4
 - CVE-2026-111497: deps - brotli decoder out-of-bounds write permits remote code execution (High)
