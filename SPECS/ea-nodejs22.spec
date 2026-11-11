@@ -1,7 +1,7 @@
 Name:    ea-nodejs22
 Vendor:  cPanel, Inc.
 Summary: Node.js 22
-Version: 22.23.4
+Version: 22.23.5
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4572 for more details
 %define release_prefix 1
 Release: %{release_prefix}%{?dist}.cpanel
@@ -69,6 +69,25 @@ echo -n /opt/cpanel/ea-nodejs22/bin/node > %{buildroot}/etc/cpanel/ea4/passenger
 
 
 %changelog
+* Wed Nov 11 2026 Cory McIntire <cory.mcintire@webpros.com> - 22.23.5-1
+- EA-13649: Update ea-nodejs22 from v22.23.4 to v22.23.5
+- CVE-2026-123863: http2 - release headers when a stream is removed (High)
+- CVE-2026-123864: tls,http - prevent nested parser execution from empty writes (High)
+- CVE-2026-123865: http2 - detect streams abandoned by nghttp2 (High)
+- CVE-2026-123866: http2 - retain buffers until socket writes finish (High)
+- CVE-2026-123872: tls - disable mTLS resumption without a session id context; renegotiation, HRR and resumption can no longer change SNI (High)
+- CVE-2026-123874: http2 - retain streams during pending writes (High)
+- CVE-2026-123828: http2 - avoid overflowing ALTSVC buffers (Medium)
+- CVE-2026-123867: tls - apply the CA of SNI contexts without a certificate (Medium)
+- CVE-2026-123868: http2 - charge inbound DATA retained by streams to maxSessionMemory (Medium)
+- CVE-2026-123871: http - redact proxy credentials in invalid proxy URL errors (Medium)
+- CVE-2026-123875: http2 - guard against null write request on cancelled stream (Medium)
+- CVE-2026-123877: https - isolate Agent TLS policy keys (Medium)
+- CVE-2026-123829: permission - do not leak denied descendants in recursive fs.watch (Low)
+- CVE-2026-123862: zlib - handle params callback after destroy (Low)
+- CVE-2026-123873: permission - check heap snapshot destination (Low)
+- CVE-2026-106071: permission - wildcard grants without a trailing slash no longer grant paths sharing the prefix (Low)
+
 * Wed Oct 21 2026 EA4 Update Bot <cory.mcintire@webpros.com> - 22.23.4-1
 - EA-13614: Update ea-nodejs22 from v22.23.3 to v22.23.4
 - CVE-2026-111497: deps - brotli decoder out-of-bounds write permits remote code execution (High)
